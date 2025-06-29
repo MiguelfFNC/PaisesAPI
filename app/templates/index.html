@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <title>Busqueda de Paises</title>
+</head>
+<body>
+    <header>
+        <h1>Explora información detallada de cualquier país del mundo</h1>
+        <input type="text" id="searchInput" placeholder="Escribe un país..." oninput="mostrarSugerencias(event)" onkeydown="detectarEnter(event)">
+        <ul id="sugerencias" class="sugerencias"></ul>
+        <button onclick="buscarPais()">Buscar</button>
+    </header>
+    <main id="infoContainer" style="display: none;"></main>
+    <div class="card">
+        <img id="flag">
+        <h2 id="name"></h2>
+    </div>
+    <div class="details">
+        <p><strong>Idioma:</strong> <span id="languages"></span></p>
+        <p><strong>Moneda:</strong> <span id="currencies"></span></p>
+        <p><strong>Población:</strong> <span id="population"></span></p>
+        <p><strong>Capital:</strong> <span id="capital"></span></p>
+        <p><strong>Región:</strong> <span id="region"></span></p>
+        <p><strong>Área:</strong> <span id="area"></span></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
